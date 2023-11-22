@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Survey VMTS TIK PNL</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gradient-to-r from-orange-500 via-orange-400 to-violet-500 text-gray-900 p-8">
+    <div class="max-w-md mx-auto bg-white rounded p-6 shadow-md">
+        <h1 class="text-2xl font-bold mb-4 text-purple-500">Formulir Survey Mitra TIK PNL</h1>
+       
+        <a href="{{ url_for('hasil_tanggapan') }}" class="text-yellow-500">Lihat Hasil Tanggapan</a>
+
+        <form method="post" class="mt-8">
+            {{ form.csrf_token }}
+            
+            <div class="mb-4">
+                <label for="nama" class="block text-gray-600">Nama</label>
+                {{ form.nama(class="w-full p-2 border rounded", placeholder="Masukkan Nama") }}
+            </div>
+
+            <div class="mb-4">
+                <label for="nim_nip" class="block text-gray-600">NIM/NIP</label>
+                {{ form.nim_nip(class="w-full p-2 border rounded", placeholder="Masukkan NIM/NIP") }}
+            </div>
+
+            <div class="mb-4">
+                <label for="status" class="block text-gray-600">Status</label>
+                {{ form.status(class="w-full p-2 border rounded") }}
+            </div>
+
+            <div class="mb-4">
+                <label for="bidang_kerjasama" class="block text-gray-600">Dalam bidang apa mitra terlibat kerjasama dengan Politeknik Negeri Lhokseumawe</label>
+                {{ form.bidang_kerjasama(class="w-full p-2 border rounded") }}
+            </div>
+
+            <div class="mb-4">
+                <label for="respon_kerjasama" class="block text-gray-600">Respon bidang kerjasama PNL terkait kebutuhan Mitra dengan tepat dan professional</label>
+                {{ form.respon_kerjasama(class="w-full p-2 border rounded") }}
+            </div>
+
+            <div class="mb-4">
+                <label for="proses_pembuatan" class="block text-gray-600">Apakah proses pembuatan MoU dan Perjanjian Kerja Sama (PKS) terlaksana sesuai harapan</label>
+                {{ form.proses_pembuatan(class="w-full p-2 border rounded") }}
+            </div>
+
+            <div class="mb-4">
+                <label for="pendampingan_pnl" class="block text-gray-600">PNL memberikan pendampingan terhadap kebutuhan kerja sama sesuai harapan mitra</label>
+                {{ form.pendampingan_pnl(class="w-full p-2 border rounded") }}
+            </div>
+
+            <div class="mb-4">
+                <label for="kesesuaian_harapan" class="block text-gray-600">Apakah kerja sama yang terjalin berjalan sesuai dengan harapan mitra</label>
+                {{ form.kesesuaian_harapan(class="w-full p-2 border rounded") }}
+            </div>
+
+            <div class="mb-4">
+                <label for="manfaat_kerjasama" class="block text-gray-600">Apakah mitra mendapatkan hal yang berguna dari kerjasama</label>
+                {{ form.manfaat_kerjasama(class="w-full p-2 border rounded") }}
+            </div>
+
+            <div class="mb-4">
+                <label for="implementasi_kerjasama" class="block text-gray-600">Apakah kerjasama mitra dengan PNL telah diimplementasikan sesuai dengan yang telah disepakati bersama</label>
+                {{ form.implementasi_kerjasama(class="w-full p-2 border rounded") }}
+            </div>
+
+            <div class="mb-4">
+                <label for="pelaporan_kegiatan" class="block text-gray-600">Pelaporan akhir dari hasil kegiatan kerjasama dikomunikasikan dengan baik kepada mitra</label>
+                {{ form.pelaporan_kegiatan(class="w-full p-2 border rounded") }}
+            </div>
+
+            <button type="submit" class="bg-purple-500 text-white p-2 rounded">Kirim</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Survey VMTS TIK PNL</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gradient-to-r from-orange-500 via-orange-400 to-violet-500 text-gray-900 p-8">
+    <div class="max-w-md mx-auto bg-white rounded p-6 shadow-md">
+        <h1 class="text-2xl font-bold mb-4 text-purple-500">Formulir Survey VMTS TIK PNL</h1>
+       
+        <a href="{{ url_for('hasil_tanggapan') }}" class="text-yellow-500">Lihat Hasil Tanggapan</a>
+
+        <form method="post" class="mt-8">
+            {{ form.csrf_token }}
+            
+            <div class="mb-4">
+                <label for="nama" class="block text-gray-600">Nama</label>
+                {{ form.nama(class="w-full p-2 border rounded", placeholder="Masukkan Nama") }}
+            </div>
+
+            <div class="mb-4">
+                <label for="nim_nip" class="block text-gray-600">NIM/NIP</label>
+                {{ form.nim_nip(class="w-full p-2 border rounded", placeholder="Masukkan NIM/NIP") }}
+            </div>
+
+            <div class="mb-4">
+                <label for="status" class="block text-gray-600">Status</label>
+                {{ form.status(class="w-full p-2 border rounded") }}
+            </div>
+
+            <div class="mb-4">
+                <label for="struktur_organisasi" class="block text-gray-600">Struktur Organisasi dan Tatakerja PNL yang Jelas</label>
+                {{ form.struktur_organisasi(class="w-full p-2 border rounded") }}
+            </div>
+
+            <div class="mb-4">
+                <label for="pengembangan_kompetensi" class="block text-gray-600">Pengembangan Kompetensi, Tugas Pokok, dan Sarana Prasarana Pembelajaran</label>
+                {{ form.pengembangan_kompetensi(class="w-full p-2 border rounded") }}
+            </div>
+
+            <div class="mb-4">
+                <label for="layanan_akademik_non_akademik" class="block text-gray-600">Layanan Akademik dan Non Akademik</label>
+                {{ form.layanan_akademik_non_akademik(class="w-full p-2 border rounded") }}
+            </div>
+
+            <div class="mb-4">
+                <label for="kesesuaian_regulasi" class="block text-gray-600">Kesesuaian Regulasi dengan Implementasi di PNL</label>
+                {{ form.kesesuaian_regulasi(class="w-full p-2 border rounded") }}
+            </div>
+
+            <button type="submit" class="bg-purple-500 text-white p-2 rounded">Kirim</button>
+        </form>
+    </div>
+</body>
+</html>
